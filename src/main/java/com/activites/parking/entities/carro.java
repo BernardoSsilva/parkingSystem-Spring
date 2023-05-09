@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 public class carro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCarro;
+    private Long id;
     private String placa;
     private String modelo;
     private String documento;
@@ -21,16 +21,16 @@ public class carro {
 
     }
 
-    public carro(Long idCarro, String placa, String modelo, String documento, Integer ano) {
-        this.idCarro = idCarro;
+    public carro(Long id, String placa, String modelo, String documento, Integer ano) {
+        this.id = id;
         this.placa = placa;
         this.modelo = modelo;
         this.documento = documento;
         this.ano = ano;
     }
 
-    public Long getIdCarro() {
-        return idCarro;
+    public Long getId() {
+        return id;
     }
 
     public String getPlaca() {
@@ -49,8 +49,8 @@ public class carro {
         return ano;
     }
 
-    public void setIdCarro(Long idCarro) {
-        this.idCarro = idCarro;
+    public void setIdCarro(Long id) {
+        this.id = id;
     }
 
     public void setPlaca(String placa) {
@@ -73,7 +73,7 @@ public class carro {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((idCarro == null) ? 0 : idCarro.hashCode());
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((placa == null) ? 0 : placa.hashCode());
         result = prime * result + ((modelo == null) ? 0 : modelo.hashCode());
         result = prime * result + ((documento == null) ? 0 : documento.hashCode());
@@ -90,10 +90,10 @@ public class carro {
         if (getClass() != obj.getClass())
             return false;
         carro other = (carro) obj;
-        if (idCarro == null) {
-            if (other.idCarro != null)
+        if (id == null) {
+            if (other.id != null)
                 return false;
-        } else if (!idCarro.equals(other.idCarro))
+        } else if (!id.equals(other.id))
             return false;
         if (placa == null) {
             if (other.placa != null)
