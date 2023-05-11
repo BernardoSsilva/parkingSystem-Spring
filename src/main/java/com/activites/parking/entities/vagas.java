@@ -15,20 +15,14 @@ public class vagas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Integer numeroVaga;
-    private Boolean ocupada;
-
-    @JoinColumn(name = "carro_id")
-    private carro cod_carro;
 
     public vagas() {
 
     }
 
-    public vagas(Long id, Integer numeroVaga, Boolean ocupada, carro cod_carro) {
+    public vagas(Long id, Integer numeroVaga) {
         this.id = id;
         this.numeroVaga = numeroVaga;
-        this.ocupada = ocupada;
-        this.cod_carro = cod_carro;
     }
 
     public Long getId() {
@@ -47,22 +41,12 @@ public class vagas {
         this.numeroVaga = numeroVaga;
     }
 
-    public Boolean getOcupada() {
-        return ocupada;
-    }
-
-    public void setOcupada(Boolean ocupada) {
-        this.ocupada = ocupada;
-    }
-
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((numeroVaga == null) ? 0 : numeroVaga.hashCode());
-        result = prime * result + ((ocupada == null) ? 0 : ocupada.hashCode());
-        result = prime * result + ((cod_carro == null) ? 0 : cod_carro.hashCode());
         return result;
     }
 
@@ -85,25 +69,7 @@ public class vagas {
                 return false;
         } else if (!numeroVaga.equals(other.numeroVaga))
             return false;
-        if (ocupada == null) {
-            if (other.ocupada != null)
-                return false;
-        } else if (!ocupada.equals(other.ocupada))
-            return false;
-        if (cod_carro == null) {
-            if (other.cod_carro != null)
-                return false;
-        } else if (!cod_carro.equals(other.cod_carro))
-            return false;
         return true;
-    }
-
-    public carro getCod_carro() {
-        return cod_carro;
-    }
-
-    public void setCod_carro(carro cod_carro) {
-        this.cod_carro = cod_carro;
     }
 
 }
